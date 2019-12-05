@@ -17,6 +17,13 @@
 			<td>First public version</td>
 		</tr>
 	</tbody>
+	<tbody>
+		<tr>
+			<td>1.1</td>
+			<td>05/12/2019</td>
+			<td>Updated to include mapped (using CryptoCompare digital asset naming) and unmapped (exchange identifier) market subscription functionality</td>
+		</tr>
+	</tbody>
 </table>
 
 ## Introduction
