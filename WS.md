@@ -31,7 +31,7 @@ Data subscriptions are made for a given exchange / coin pair combination with on
 > 
 >     "api_key": **_API_KEY_**
 >
->     "mapped": **_boolean_** (optional, default = true)
+>     "mapped": **_boolean_** (optional, default = false)
 > 
 > }
 
@@ -149,7 +149,7 @@ Using the CryptoCompare mapped representation (same as our website):
 > 
 > }
 
-Note the mapped field can be ommitted as by default it is considered to be true. It is included in the example above for clarity.
+Note the mapped field can be ommitted, by default it is considered to be false. It is included in the example for clarity.
 
 Using the BitMex exchange market representation:
 > {
