@@ -20,6 +20,7 @@ type message struct {
 	Action string   `json:"action"`
 	APIKey string   `json:"api_key"`
 	Subs   []string `json:"subs"`
+	Mapped bool     `json:"mapped"`
 }
 
 type subscription struct {
@@ -44,11 +45,12 @@ func generateFormattedSubscription(sub subscription) string {
 	return subMessage
 }
 
-func subscribe(subs []subscription, apiKey string) (string, error) {
+func subscribe(subs []subscription, apiKey string, mapped bool) (string, error) {
 
 	subscribeMessage := message{
 		Action: "SubAdd",
 		APIKey: apiKey,
+		Mapped: mapped,
 	}
 
 	for _, sub := range subs {
@@ -63,11 +65,12 @@ func subscribe(subs []subscription, apiKey string) (string, error) {
 	return string(b), nil
 }
 
-func unsubscribe(subs []subscription, apiKey string) (string, error) {
+func unsubscribe(subs []subscription, apiKey string, mapped bool) (string, error) {
 
 	unsubscribeMessage := message{
 		Action: "SubRemove",
 		APIKey: apiKey,
+		Mapped: mapped,
 	}
 
 	for _, sub := range subs {
@@ -109,7 +112,10 @@ func main() {
 			marketTo:   "USD",
 		},
 	}
-	subsMessage, err := subscribe(subs, "YOUR-API-KEY")
+
+	shouldUseMappedRepresentation := true
+	subsMessage, err := subscribe(subs, "YOUR-API-KEY", shouldUseMappedRepresentation)
+
 	if err != nil {
 		log.Fatal(err)
 	}
