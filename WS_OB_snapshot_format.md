@@ -137,4 +137,4 @@ Snapshots are provided upon subscription in a raw ASCII format, as defined in th
 
 For example, a snapshot for Kraken Ethereum to USD, containing 2 bids and 2 asks, and sent after the 40<sup>th</sup> Kraken ETH-USD update message was sent by the streaming service, may take the form:
 
-> `9~kraken~ETH~USD:40:208.98~27,208.27~1.303:208.99~13,209.12~1.1|`
+> `9~kraken~ETH~USD~40:208.98~27,208.27~1.303:208.99~13,209.12~1.1|`
